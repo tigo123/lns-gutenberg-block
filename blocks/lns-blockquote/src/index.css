@@ -1,0 +1,33 @@
+.lns_blockquote {
+    font-size: 24px;
+    padding-left: 18px;
+    border-left: 2px solid #7F56D9;
+    margin-top: 1.2em;
+    margin-bottom: 1.2em;
+}
+
+.lns_blockquote blockquote.lns_quote {
+    padding: 0;
+    border: none;
+    margin: 0;
+    font-size: 1em;
+    line-height: calc(32/24);
+    font-style: italic;
+    font-weight: 500;
+    color: inherit;
+    font-family: inherit;
+}
+
+.lns_blockquote .lns_name {
+    margin-top: 2em;
+    font-size: 0.666em;
+    line-height: 1.5;
+    margin-bottom: 0;
+    color: #595959;
+}
+
+@media (max-width: 640px) {
+    .lns_blockquote {
+        font-size: 18px;
+    }
+}

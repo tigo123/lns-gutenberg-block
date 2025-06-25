@@ -1,0 +1,10 @@
+.DS_Store
+node_modules
+dist
+tailwindbuild.scss
+admin.css.map
+admin.css
+languages/*-backup-*.pot~
+languages/*-backup-*.po~
+blocks/*/node_modules
+blocks/*/build

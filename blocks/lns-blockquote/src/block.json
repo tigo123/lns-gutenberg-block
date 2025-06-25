@@ -1,0 +1,39 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "lnsgb/lns-blockquote",
+    "version": "0.1.0",
+    "title": "LNS Blockquote",
+    "category": "widgets",
+    "description": "Better blockquote by LeNamSite",
+    "example": {
+        "attributes": {
+			"quote": "“In a world older and more complete than ours they move finished and complete, gifted with extensions of the senses we have lost or never attained, living by voices we shall never hear.”",
+            "name" : "-LeNamSite"
+		}
+    },
+    "attributes": {
+        "quote": {
+            "type": "string",
+            "source": "html",
+            "selector": ".lns_quote"
+        },
+        "name": {
+            "type": "string",
+            "source": "html",
+            "selector": ".lns_name"
+        }
+    },
+    "supports": {
+        "color": {
+            "background": false,
+            "text": true
+        },
+        "html": false
+    },
+    "textdomain": "lnsgb",
+    "editorScript": "file:./index.js",
+    "editorStyle": "file:./editor.css",
+    "style": "file:./index.css",
+    "render": "file:./render.php"
+}

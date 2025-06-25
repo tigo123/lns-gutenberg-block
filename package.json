@@ -1,0 +1,14 @@
+{
+    "name": "lns-gutenberg-block",
+    "version": "1.0",
+    "description": "Gutenberg Blocks used for your website. Developed by LeNamSite",
+    "author": "LeNamSite",
+    "license": "GPL-2.0-or-later",
+    "scripts": {
+        "start-blockquote": "cd ./blocks/lns-blockquote && npm run start"
+    },
+    "devDependencies": {
+        "@wordpress/env": "^10.25.0",
+        "@wordpress/scripts": "^30.18.0"
+    }
+}
