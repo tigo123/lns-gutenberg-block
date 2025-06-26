@@ -8,3 +8,5 @@ languages/*-backup-*.pot~
 languages/*-backup-*.po~
 blocks/*/node_modules
 blocks/*/build
+includes/blocks/*/node_modules
+includes/blocks/*/build

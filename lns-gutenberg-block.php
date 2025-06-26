@@ -10,6 +10,7 @@
  * Author URI:  https://lenamsite.com/
  * Text Domain: lnsgb
  * Domain Path: /languages
+ * Requires at least: 6.6
  * Requires PHP: 7.4.2
  */
 
@@ -37,5 +38,5 @@ if ( !function_exists( 'get_plugin_data' ) ) {
 }
 $plugin_data = get_plugin_data( __FILE__, true, false );
 
-include_once LNSGB_DIR . '/inc/init.php';
+include_once LNSGB_DIR . '/includes/init.php';
 ?>

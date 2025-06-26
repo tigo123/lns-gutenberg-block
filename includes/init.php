@@ -27,7 +27,7 @@ class LeNamSite_Gutenberg_Block
      */
     private function includes()
     {
-        include_once LNSGB_DIR . '/blocks/register.php';
+        include_once LNSGB_DIR . '/includes/blocks/register.php';
 
     }
 
@@ -36,7 +36,7 @@ class LeNamSite_Gutenberg_Block
      */
     public static function activate()
     {
-        include_once LNSGB_DIR . '/inc/activation/active.php';
+        include_once LNSGB_DIR . '/includes/activation/active.php';
     }
 
     /**
