@@ -4,7 +4,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps, RichText } from "@wordpress/block-editor";
+import { useBlockProps, InnerBlocks, RichText } from "@wordpress/block-editor";
 
 /**
  * The save function defines the way in which the different attributes should
@@ -19,23 +19,28 @@ import { useBlockProps, RichText } from "@wordpress/block-editor";
  * @return {Element} Element to render.
  */
 export default function save({ attributes }) {
-    const { quote, name } = attributes;
+    const { title_tag, title } = attributes;
 
-    if (!quote) return null;
+    if (!title_tag && title) return null;
 
-    var name_html = "";
-    if (name)
-        name_html = (
-            <RichText.Content tagName="p" className="lns_name" value={name} />
-        );
-    return (
-        <div {...useBlockProps.save({ className: "lns_blockquote" })}>
+    var titleHtml = "";
+    if (title)
+        titleHtml = (
             <RichText.Content
-                tagName="blockquote"
-                className="lns_quote"
-                value={quote}
+                tagName={title_tag}
+                className="lns_title"
+                value={title}
             />
-            {name_html}
+        );
+
+    return (
+        <div {...useBlockProps.save({ className: "lns_conclusion" })}>
+            <div className="lns_wrapper">
+                {titleHtml}
+                <div className="lns_content">
+                    <InnerBlocks.Content />
+                </div>
+            </div>
         </div>
     );
 }

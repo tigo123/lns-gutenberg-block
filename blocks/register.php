@@ -6,10 +6,21 @@ if ( !defined( 'ABSPATH' ) )
 
 final class Register
 {
+    private $blocks = [];
     // constructor
     public function __construct()
     {
-        register_block_type( __DIR__ . '/lns-blockquote/build' );
+        $this->blocks = [ 
+            'lns-blockquote',
+            'lns-conclusion'
+        ];
+        $this->register_blocks();
+    }
+
+    private function register_blocks()
+    {
+        foreach ( $this->blocks as $key => $block )
+            register_block_type( __DIR__ . "/$block/build" );
     }
 
 }

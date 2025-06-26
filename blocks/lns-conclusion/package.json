@@ -1,0 +1,12 @@
+{
+	"name": "lns-conclusion",
+	"version": "0.1.0",
+	"description": "Conclusion for your post by LeNamSite",
+	"author": "LeNamSite",
+	"license": "GPL-2.0-or-later",
+	"main": "build/index.js",
+	"scripts": {
+		"build": "wp-scripts build --blocks-manifest",
+		"start": "wp-scripts start --blocks-manifest"
+	}
+}

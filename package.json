@@ -5,10 +5,20 @@
     "author": "LeNamSite",
     "license": "GPL-2.0-or-later",
     "scripts": {
-        "start-blockquote": "cd ./blocks/lns-blockquote && npm run start"
+        "start-blockquote": "cd ./blocks/lns-blockquote && npm run start",
+        "start-conclusion": "cd ./blocks/lns-conclusion && npm run start",
+        "build-blockquote": "cd ./blocks/lns-blockquote && npm run build",
+        "build-conclusion": "cd ./blocks/lns-conclusion && npm run build",
+        "build-all": "concurrently 'npm run build-blockquote' 'npm run build-conclusion'",
+        "packages-update": "wp-scripts packages-update",
+        "plugin-zip": "wp-scripts plugin-zip",
+        "env": "wp-env"
     },
     "devDependencies": {
         "@wordpress/env": "^10.25.0",
         "@wordpress/scripts": "^30.18.0"
+    },
+    "dependencies": {
+        "concurrently": "^9.2.0"
     }
 }

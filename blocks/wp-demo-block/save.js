@@ -4,7 +4,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps, RichText } from "@wordpress/block-editor";
+import { useBlockProps } from '@wordpress/block-editor';
 
 /**
  * The save function defines the way in which the different attributes should
@@ -18,24 +18,24 @@ import { useBlockProps, RichText } from "@wordpress/block-editor";
  *
  * @return {Element} Element to render.
  */
-export default function save({ attributes }) {
-    const { quote, name } = attributes;
+export default function save( { attributes } ) {
+	const { fallbackCurrentYear, showStartingYear, startingYear } = attributes;
+	
+	// If there is no fallbackCurrentYear, which could happen if the block
+	// is loaded from a template/pattern, return null. In this case, block
+	// rendering will be handled by the render.php file.
+	if ( ! fallbackCurrentYear ) {
+		return null;
+	}
+	
+	let displayDate;
 
-    if (!quote) return null;
+	// Display the starting year as well if supplied by the user.
+	if ( showStartingYear && startingYear ) {
+		displayDate = startingYear + '–' + fallbackCurrentYear;
+	} else {
+		displayDate = fallbackCurrentYear;
+	}
 
-    var name_html = "";
-    if (name)
-        name_html = (
-            <RichText.Content tagName="p" className="lns_name" value={name} />
-        );
-    return (
-        <div {...useBlockProps.save({ className: "lns_blockquote" })}>
-            <RichText.Content
-                tagName="blockquote"
-                className="lns_quote"
-                value={quote}
-            />
-            {name_html}
-        </div>
-    );
+	return <p { ...useBlockProps.save() }>© { displayDate }</p>;
 }

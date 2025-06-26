@@ -1,0 +1,54 @@
+.lns_conclusion {
+    font-size: 20px;
+    margin-top: 1.2em;
+    margin-bottom: 1.2em;
+    background: #F9FAFB;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
+
+.lns_conclusion .lns_wrapper {
+    padding: 32px;
+    border-radius: 16px;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    -ms-border-radius: 16px;
+    -o-border-radius: 16px;
+}
+
+.lns_conclusion .lns_title {
+    font-size: 1.5em;
+    line-height: calc(38/30);
+    font-weight: 600;
+    margin-bottom: 0;
+    margin-top: 0;
+    color: inherit;
+}
+
+.lns_conclusion .lns_content {
+    font-size: 1em;
+    margin-top: 1em;
+    font-size: inherit;
+    line-height: calc(28/20);
+}
+
+.lns_conclusion .lns_content>*:last-child {
+    margin-bottom: 0;
+}
+
+.lns_conclusion li {
+    margin-bottom: .2em;
+}
+
+@media (max-width: 640px) {
+    .lns_conclusion {
+        font-size: 1rem;
+    }
+
+    .lns_conclusion .lns_wrapper {
+        padding: 24px;
+    }
+}

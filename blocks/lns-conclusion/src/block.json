@@ -1,0 +1,64 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "lnsgb/lns-conclusion",
+    "version": "0.1.0",
+    "title": "LNS Conclusion",
+    "category": "widgets",
+    "allowedBlocks": [
+        "core/paragraph",
+        "core/button",
+        "core/heading",
+        "core/image",
+        "core/list"
+    ],
+    "description": "Conclusion for your post by LeNamSite",
+    "example": {
+        "attributes": {
+            "title": "LeNamSite Conclusion"
+        },
+        "innerBlocks": [
+            {
+                "name": "core/paragraph",
+                "attributes": {
+                    "content": "Morbi sed imperdiet in ipsum, adipiscing elit dui lectus. Tellus id scelerisque est ultricies ultricies. Duis est sit sed leo nisl, blandit elit sagittis. Quisque tristique consequat quam sed. Nisl at scelerisque amet nulla purus habitasse."
+                }
+            },
+            {
+                "name": "core/paragraph",
+                "attributes": {
+                    "content": "Nunc sed faucibus bibendum feugiat sed interdum. Ipsum egestas condimentum mi massa. In tincidunt pharetra consectetur sed duis facilisis metus. Etiam egestas in nec sed et. Quis lobortis at sit dictum eget nibh tortor commodo cursus."
+                }
+            },
+            {
+                "name": "core/paragraph",
+                "attributes": {
+                    "content": "Odio felis sagittis, morbi feugiat tortor vitae feugiat fusce aliquet. Nam elementum urna nisi aliquet erat dolor enim. Ornare id morbi eget ipsum. Aliquam senectus neque ut id eget consectetur dictum. Donec posuere pharetra odio consequat scelerisque et, nunc tortor."
+                }
+            }
+        ]
+    },
+    "attributes": {
+        "title_tag": {
+            "type": "string",
+            "default": "h2"
+        },
+        "title": {
+            "type": "string",
+            "source": "html",
+            "selector": ".lns_title"
+        }
+    },
+    "supports": {
+        "color": {
+            "background": true,
+            "text": true
+        },
+        "html": false
+    },
+    "textdomain": "lnsgb",
+    "editorScript": "file:./index.js",
+    "editorStyle": "file:./editor.css",
+    "style": "file:./index.css",
+    "render": "file:./render.php"
+}
