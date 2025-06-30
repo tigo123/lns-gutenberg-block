@@ -1,0 +1,93 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "lnsgb/lns-horizontal-product-card",
+    "version": "0.1.0",
+    "title": "LNS Horizontal Product Card",
+    "category": "widgets",
+    "description": "Custom horizontal product cart by LeNamSite",
+    "example": {
+        "attributes": {
+            "title": "LeNamSite Horizontal Product Cart",
+            "link": "https://lenamsite.com",
+            "imageUrl": "https://lenamsite.com/wp-content/uploads/2025/06/default-thumbnail-lenamsite.jpg",
+            "imageAlt": "Example Image",
+            "rating": 5,
+            "description": "This is a description",
+            "price": "100,000 VND",
+            "salePrice": "80,000 VND",
+            "buttonText": "Buy Now"
+        }
+    },
+    "attributes": {
+        "title": {
+            "type": "string",
+            "default": "Product Title"
+        },
+        "linkText": {
+            "type": "string"
+        },
+        "opensInNewTab": {
+            "type": "boolean"
+        },
+        "linkUrl": {
+            "type": "string"
+        },
+        "rating": {
+            "type": "string",
+            "default": "5"
+        },
+        "description": {
+            "type": "string",
+            "default": "This is a description"
+        },
+        "price": {
+            "type": "string",
+            "default": "100,000 VND"
+        },
+        "salePrice": {
+            "type": "string",
+            "default": "80,000 VND"
+        },
+        "buttonText": {
+            "type": "string",
+            "default": "Buy Now"
+        },
+        "imageID": {
+            "type": "integer"
+        },
+        "imageUrl": {
+            "type": "string",
+            "default": "https://lenamsite.com/wp-content/uploads/2025/06/default-thumbnail-lenamsite.jpg"
+        },
+        "imageAlt": {
+            "type": "string"
+        },
+        "iconID": {
+            "type": "integer"
+        },
+        "iconUrl": {
+            "type": "string"
+        },
+        "imageSize": {
+            "type": "string",
+            "default": "200"
+        },
+        "cardWidth": {
+            "type": "string",
+            "default": "600"
+        }
+    },
+    "supports": {
+        "color": {
+            "background": false,
+            "text": false
+        },
+        "html": false
+    },
+    "textdomain": "lnsgb",
+    "editorScript": "file:./index.js",
+    "editorStyle": "file:./editor.css",
+    "style": "file:./index.css",
+    "render": "file:./render.php"
+}

@@ -1,0 +1,12 @@
+{
+	"name": "lns-horizontal-product-cart",
+	"version": "0.1.0",
+	"description": "Custom horizontal product cart by LeNamSite",
+	"author": "LeNamSite",
+	"license": "GPL-2.0-or-later",
+	"main": "build/index.js",
+	"scripts": {
+		"build": "wp-scripts build --blocks-manifest",
+		"start": "wp-scripts start --blocks-manifest"
+	}
+}
