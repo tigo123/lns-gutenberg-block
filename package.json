@@ -7,9 +7,11 @@
     "scripts": {
         "start-blockquote": "cd ./includes/blocks/lns-blockquote && npm run start",
         "start-conclusion": "cd ./includes/blocks/lns-conclusion && npm run start",
+        "start-horizontal-product-card": "cd ./includes/blocks/lns-horizontal-product-card && npm run start",
         "build-blockquote": "cd ./includes/blocks/lns-blockquote && npm run build",
         "build-conclusion": "cd ./includes/blocks/lns-conclusion && npm run build",
-        "build-all": "concurrently \"npm run build-blockquote\" \"npm run build-conclusion\"",
+        "build-horizontal-product-card": "cd ./includes/blocks/lns-horizontal-product-card && npm run build",
+        "build-all": "concurrently \"npm run build-blockquote\" \"npm run build-conclusion\" \"npm run build-horizontal-product-card\"",
         "packages-update": "wp-scripts packages-update",
         "plugin-zip": "wp-scripts plugin-zip",
         "env": "wp-env"

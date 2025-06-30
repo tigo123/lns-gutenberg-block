@@ -31,13 +31,11 @@
             "type": "boolean"
         },
         "linkUrl": {
-            "type": "string",
-            "source": "html",
-            "selector": ".lns_link"
+            "type": "string"
         },
         "rating": {
-            "type": "integer",
-            "default": 5
+            "type": "string",
+            "default": "5"
         },
         "description": {
             "type": "string",
@@ -70,6 +68,14 @@
         },
         "iconUrl": {
             "type": "string"
+        },
+        "imageSize": {
+            "type": "string",
+            "default": "200"
+        },
+        "cardWidth": {
+            "type": "string",
+            "default": "600"
         }
     },
     "supports": {

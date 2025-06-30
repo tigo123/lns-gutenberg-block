@@ -34,6 +34,8 @@ export default function save({ attributes }) {
         imageAlt,
         iconID,
         iconUrl,
+        imageSize,
+        cardWidth,
     } = attributes;
 
     let myHref = "#";
@@ -51,6 +53,7 @@ export default function save({ attributes }) {
                 className="lns_thumbnail"
                 width={300}
                 height={300}
+                style={{ "--lns_image_size": imageSize + "px" }}
             />
         );
     };
@@ -135,6 +138,9 @@ export default function save({ attributes }) {
         <a
             {...useBlockProps.save({
                 className: "lns_horizontal_product_card",
+                style: {
+                    "--lns_card_width": cardWidth + "px",
+                },
             })}
             href={myHref}
             target={myTarget}

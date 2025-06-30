@@ -65,9 +65,14 @@ export default function Edit({ attributes, setAttributes }) {
         imageAlt,
         iconID,
         iconUrl,
+        imageSize,
+        cardWidth,
     } = attributes;
     const blockProps = useBlockProps({
         className: "lns_horizontal_product_card",
+        style: {
+            "--lns_card_width": cardWidth + "px",
+        },
     });
     const setImageData = (newImage) => {
         let url = newImage.url;
@@ -119,6 +124,7 @@ export default function Edit({ attributes, setAttributes }) {
                 className="lns_thumbnail"
                 width={300}
                 height={300}
+                style={{ "--lns_image_size": imageSize + "px" }}
             />
         );
     };
@@ -203,9 +209,7 @@ export default function Edit({ attributes, setAttributes }) {
         <>
             <InspectorControls>
                 <Panel>
-                    <PanelBody
-                        title={__("Product Data", "lns-custom-product-cart")}
-                    >
+                    <PanelBody title={__("Product Data", "lnsgb")}>
                         <TextControl
                             __nextHasNoMarginBottom
                             __next40pxDefaultSize
@@ -297,6 +301,28 @@ export default function Edit({ attributes, setAttributes }) {
                             labels={{
                                 title: "Select Icon",
                             }}
+                        />
+                    </PanelBody>
+                    <PanelBody title={__("Card Style", "lnsgb")}>
+                        <NumberControl
+                            __next40pxDefaultSize
+                            label="Product Image Size"
+                            value={imageSize}
+                            min={0}
+                            step={1}
+                            onChange={(value) =>
+                                setAttributes({ imageSize: value })
+                            }
+                        />
+                        <NumberControl
+                            __next40pxDefaultSize
+                            label="Card Width"
+                            value={cardWidth}
+                            min={0}
+                            step={1}
+                            onChange={(value) =>
+                                setAttributes({ cardWidth: value })
+                            }
                         />
                     </PanelBody>
                 </Panel>
