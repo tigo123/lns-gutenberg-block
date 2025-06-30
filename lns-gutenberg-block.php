@@ -5,7 +5,7 @@
  * Plugin Name: LNS Gutenberg Block
  * Plugin URI:  https://lenamsite.com/
  * Description: Gutenberg Blocks used for your website. Developed by LeNamSite
- * Version:     1.1
+ * Version:     1.2
  * Author:      LeNamSite
  * Author URI:  https://lenamsite.com/
  * Text Domain: lnsgb
@@ -30,7 +30,7 @@ if ( !defined( 'LNSGB_WP_VER' ) )
     define( 'LNSGB_WP_VER', '6.0' );
 
 if ( !defined( 'LNSGB_PLUGIN_VER' ) )
-    define( 'LNSGB_PLUGIN_VER', '1.1' );
+    define( 'LNSGB_PLUGIN_VER', '1.2' );
 
 // Fix translation
 if ( !function_exists( 'get_plugin_data' ) ) {
