@@ -4,7 +4,7 @@
     margin-bottom: 1.2em;
     width: var(--lns_card_width);
     max-width: 100%;
-    color: inherit;
+    color: inherit !important;
     display: block;
     margin-left: auto;
     margin-right: auto;

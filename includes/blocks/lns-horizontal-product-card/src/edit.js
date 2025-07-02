@@ -34,6 +34,7 @@ import {
     PanelRow,
     TextControl,
     TextareaControl,
+    Button,
 } from "@wordpress/components";
 import { __experimentalNumberControl as NumberControl } from "@wordpress/components";
 
@@ -75,30 +76,16 @@ export default function Edit({ attributes, setAttributes }) {
         },
     });
     const setImageData = (newImage) => {
-        let url = newImage.url;
-        if (
-            newImage.sizes.medium &&
-            newImage.sizes.medium.url &&
-            newImage.sizes.medium.url != ""
-        )
-            url = newImage.sizes.medium.url;
         setAttributes({
             imageID: newImage.id,
-            imageUrl: url,
+            imageUrl: newImage.url,
             imageAlt: newImage.alt,
         });
     };
     const setIconData = (newIcon) => {
-        let url = newIcon.url;
-        if (
-            newIcon.sizes.medium &&
-            newIcon.sizes.medium.url &&
-            newIcon.sizes.medium.url != ""
-        )
-            url = newIcon.sizes.medium.url;
         setAttributes({
             iconID: newIcon.id,
-            iconUrl: url,
+            iconUrl: newIcon.url,
         });
     };
     const handleTextChange = () => setAttributes({ linkText: linkUrl });
@@ -205,6 +192,43 @@ export default function Edit({ attributes, setAttributes }) {
         );
     };
 
+    const removeProductImageBtn = () => {
+        if (!imageID || !imageUrl || imageUrl == "") return "";
+        return (
+            <Button
+                variant="primary"
+                onClick={() => {
+                    setImageData({
+                        url: "",
+                        id: null,
+                        alt: "",
+                    });
+                }}
+                style={{ marginBottom: "20px" }}
+            >
+                Remove Product Image
+            </Button>
+        );
+    };
+
+    const removeIconBtn = () => {
+        if (!iconID || !iconUrl || iconUrl == "") return "";
+        return (
+            <Button
+                variant="primary"
+                onClick={() => {
+                    setIconData({
+                        url: "",
+                        id: null,
+                        alt: "",
+                    });
+                }}
+            >
+                Remove Icon
+            </Button>
+        );
+    };
+
     return (
         <>
             <InspectorControls>
@@ -293,15 +317,19 @@ export default function Edit({ attributes, setAttributes }) {
                                 title: "Select Product Image",
                             }}
                         />
-                        <Image
-                            id={iconID}
-                            size="thumbnail"
-                            onSelect={setIconData}
-                            allowedTypes={["image"]}
-                            labels={{
-                                title: "Select Icon",
-                            }}
-                        />
+                        {removeProductImageBtn()}
+                        <PanelRow>
+                            <Image
+                                id={iconID}
+                                size="thumbnail"
+                                onSelect={setIconData}
+                                allowedTypes={["image"]}
+                                labels={{
+                                    title: "Select Icon",
+                                }}
+                            />
+                            {removeIconBtn()}
+                        </PanelRow>
                     </PanelBody>
                     <PanelBody title={__("Card Style", "lnsgb")}>
                         <NumberControl
@@ -345,7 +373,7 @@ export default function Edit({ attributes, setAttributes }) {
                         <div className="lns_description">{description}</div>
                         <div className="lns_row lns_row_3">
                             <PriceHTML />
-                            <p className="lns_button">{buttonText}</p>
+                            <span className="lns_button">{buttonText}</span>
                         </div>
                     </div>
                 </div>

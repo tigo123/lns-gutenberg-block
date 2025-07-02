@@ -163,7 +163,7 @@ export default function save({ attributes }) {
                     <div className="lns_description">{description}</div>
                     <div className="lns_row lns_row_3">
                         <PriceHTML />
-                        <p className="lns_button">{buttonText}</p>
+                        <span className="lns_button">{buttonText}</span>
                     </div>
                 </div>
             </div>
