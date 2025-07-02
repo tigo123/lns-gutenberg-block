@@ -38,6 +38,10 @@
     -o-transition: all 0.3s ease;
 }
 
+.lns_horizontal_product_card .lns_title {
+    margin-bottom: 0 !important;
+}
+
 .lns_horizontal_product_card .lns_thumbnail {
     width: var(--lns_image_size);
     height: var(--lns_image_size);
@@ -73,6 +77,10 @@
     font-weight: 600;
     font-size: 1.1em;
     align-items: flex-start;
+}
+
+.lns_horizontal_product_card .lns_row_2 {
+    margin-top: 4px;
 }
 
 .lns_horizontal_product_card .lns_icon {
